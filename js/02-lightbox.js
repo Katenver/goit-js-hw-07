@@ -1,4 +1,4 @@
-import { galleryItems } from './gallery-items.js';
+import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 const galleryEl = document.querySelector(".gallery");
 
@@ -14,25 +14,16 @@ function createMarkup() {
 }
 galleryEl.insertAdjacentHTML("afterbegin", createMarkup());
 
-let simpleLightBoxGallery = new SimpleLightbox('.gallery a', {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
+let simpleLightBoxGallery = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
 
+function openImage(evt) {
+  evt.preventDefault();
 
-  function openLargeImage(evt) {
-    evt.preventDefault();
-  
-    if (evt.target.nodeName !== "IMG") {
-      return;
-    }
-  
-    
-    function onEscapeKeyPress(evt) {
-      if (evt.key === "Escape") {
-        instance.close();
-      }
-    }
-    galleryEl.addEventListener("keydown", onEscapeKeyPress);
+  if (evt.target.nodeName !== "IMG") {
+    return;
   }
+}
 console.log(galleryItems);
